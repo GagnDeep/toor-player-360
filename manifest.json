@@ -46,6 +46,7 @@
         {"lat":-22.94,"lon":338.22,"icon":"point","action":{"type":"panorama","id":"4"}},
         {"lat":-41.69,"lon":-0.88,"icon":"point","action":{"type":"panorama","id":"2"}},
         {"lat":-27.58,"lon":47.2,"icon":"point","action":{"type":"panorama","id":"3"}},
+        {"lat":-20.58,"lon":30.2,"icon":"point","action":{"type":"panorama","id":"3"}},
         {"lat":-12.95,"lon":14.17,"icon":"point","action":{"type":"panorama","id":"6"}},
         {"lat":-19.24,"lon":33.52,"icon":"point","action":{"type":"panorama","id":"7"}},
         {"lat":-1.24,"lon":178.72,"icon":"up","action":{"type":"panorama","id":"8"}},
@@ -54,6 +55,7 @@
         {"lat":-19.13,"lon":303.35,"title": {"ru": "Видео", "en": "Video"},"action":{"type":"popup","id":"video"}},
         {"lat":71.95,"lon":219.56,"title": {"ru": "Подвесной свет", "en": "Light"},"action":{"type":"popup","id":"product0"}},
         {"lat":-27.9,"lon":65.8,"title": {"ru": "Кресло", "en": "Armchair"},"action":{"type":"popup","id":"product3"}},
+        {"lat":10.9,"lon":50.8,"title": {"en": "Drawing Board"},"action":{"type":"popup","id":"drawingboard"}},
         {"lat":-21.96,"lon":-87.08,"title": {"ru": "Кресло", "en": "Armchair"},"action":{"type":"popup","id":"product4"}},
         {"lat":-20.99,"lon":376.08,"title": {"ru": "Кресло", "en": "Armchair"},"action":{"type":"popup","id":"product2"}}
       ],

@@ -8,6 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <link rel="stylesheet" href="tourPlayer/tour-player.css">
     <script src="tourPlayer/tour-player.js"></script>
+    <script src="./simpleDrawingBoard.js"></script>
     <title>LOFT 904</title>
     <style>
         /* Цвет всех маркеров */
@@ -23,6 +24,17 @@
         /* Цвет полосы загрузки */
         #control-panel .progress-bar .value {
             /*background: #ed1c24;*/
+        }
+        .playground{
+            display: flex;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+        #canvas-drawing{
+            background:white
         }
 
     </style>
@@ -130,6 +142,11 @@
                 </div>
             </div>
         </div>
+
+        <div class="playground hidden" style="position:fixed; inset:0;  top:0; left:0; bottom: 0; right:0; background: rgba(0, 0, 0, 0.6); z-index: 9999;align-items: center; justify-content: center;">
+            <iframe class="drawing-board" style="height:80%; width: 80%" src="https://excalidraw.com/#room=91bd46ae3aa84dff9d20,9213892829832nn213"></iframe>
+            <div class="logo-hide">hidden</div>
+        </div>
         <script>
           Tour.init(false, {
               iFrameScaleControl: false,
@@ -141,8 +158,32 @@
           });
 
           Tour.on('load', function(data) {
-              //this.controls.autoRotate()
+
+            setTimeout(() => {
+
+                const markers = document.querySelectorAll(".marker");
+                const marker = Array.from(markers).filter(item => item.textContent === "Drawing Board")[0]
+                const playground = document.querySelector(".playground")
+                const board = document.querySelector("#canvas-drawing");
+
+                window.addEventListener("keydown", event => {
+                    if(event.key === "Escape"){
+                        playground.classList.add("hidden")
+                    }
+                })
+              
+                marker.addEventListener("click", (e) => {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                    // board.drawing = new SimpleDrawingBoard(board)
+                    playground.classList.toggle("hidden")
+
+                }, true)
+            },2000)
+
           })
         </script>
+
+
     </body>
 </html>
