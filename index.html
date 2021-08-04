@@ -143,13 +143,14 @@
             </div>
         </div>
 
+        
         <div class="playground hidden" style="position:fixed; inset:0;  top:0; left:0; bottom: 0; right:0; background: rgba(0, 0, 0, 0.6); z-index: 9999;align-items: center; justify-content: center;">
-            <iframe class="drawing-board" style="height:80%; width: 80%" src="https://excalidraw.com/#room=91bd46ae3aa84dff9d20,9213892829832nn213"></iframe>
+            <iframe class="drawing-board" style="height:80%; width: 50%" src="https://excalidraw.com/#room=9123fgae3aa84dff9d20,pfLqgEoY1c287ggLmGwsFA"></iframe>
             <div class="logo-hide">hidden</div>
         </div>
         <script>
-          Tour.init(false, {
-              iFrameScaleControl: false,
+            Tour.init(false, {
+                iFrameScaleControl: false,
               controlPanel: true,
               gallery: true,
               galleryVisible: false,
@@ -162,7 +163,7 @@
             setTimeout(() => {
 
                 const markers = document.querySelectorAll(".marker");
-                const marker = Array.from(markers).filter(item => item.textContent === "Drawing Board")[0]
+                let marker = Array.from(markers).filter(item => item.textContent === "Drawing Board")[0]
                 const playground = document.querySelector(".playground")
                 const board = document.querySelector("#canvas-drawing");
 
@@ -171,15 +172,22 @@
                         playground.classList.add("hidden")
                     }
                 })
-              
-                marker.addEventListener("click", (e) => {
-                    e.stopImmediatePropagation();
-                    e.preventDefault();
-                    // board.drawing = new SimpleDrawingBoard(board)
-                    playground.classList.toggle("hidden")
 
-                }, true)
-            },2000)
+                let int = setInterval(() => {
+
+                    marker = Array.from(markers).filter(item => item.textContent === "Drawing Board")[0]
+                    if(!marker) return 
+                    marker.addEventListener("click", (e) => {
+                        e.stopImmediatePropagation();
+                        e.preventDefault();
+                        playground.classList.toggle("hidden")
+                    }, true)
+
+                    clearInterval(int)
+
+                },2000)
+              
+            },3000)
 
           })
         </script>
