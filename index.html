@@ -176,7 +176,11 @@
                 let int = setInterval(() => {
 
                     marker = Array.from(markers).filter(item => item.textContent === "Drawing Board")[0]
-                    if(!marker) return 
+                    if(!marker) {
+                        console.log("Marker not found");
+                        console.log({markers})
+                        return
+                    }
                     marker.addEventListener("click", (e) => {
                         e.stopImmediatePropagation();
                         e.preventDefault();
