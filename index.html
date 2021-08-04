@@ -161,8 +161,8 @@
           Tour.on('load', function(data) {
 
             setTimeout(() => {
-
-                const markers = document.querySelectorAll(".marker");
+                
+                let markers = document.querySelectorAll(".marker");
                 let marker = Array.from(markers).filter(item => item.textContent === "Drawing Board")[0]
                 const playground = document.querySelector(".playground")
                 const board = document.querySelector("#canvas-drawing");
@@ -175,6 +175,7 @@
 
                 let int = setInterval(() => {
 
+                    markers= document.querySelectorAll(".marker");
                     marker = Array.from(markers).filter(item => item.textContent === "Drawing Board")[0]
                     if(!marker) {
                         console.log("Marker not found");
